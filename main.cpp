@@ -15,7 +15,7 @@ int main(int argc, char** argv) {
 	char *strbuf0=nullptr, *strbuf1=nullptr; // my employment chances dropping to zero:
 	
 	// print license
-	printf("  Copyright (c) 2023, Sebastian (https://github.com/ProtoSebastian)\n");
+	printf("  Copyright (c) 2023, Sebastian (https://github.com/ProtoSebastian)\n\n");
 
 	printf("argc: %d\n", argc);
 	frac a(1,3), b(1,5), na(-1,3), nb(-1,5), c, d(60, 120);

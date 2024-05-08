@@ -28,7 +28,7 @@ int main(/*int argc, char** argv*/) {
 	char *strbuf0=nullptr;
 
         // print license
-	printf("  Copyright (c) 2023, Sebastian (https://github.com/ProtoSebastian)\n");
+	printf("  Copyright (c) 2023, Sebastian (https://github.com/ProtoSebastian)\n\n");
 
 
 	/*uint16_t vals=argc-1;
@@ -41,7 +41,7 @@ int main(/*int argc, char** argv*/) {
 	}*/
 	for(float a:{0.1f, 0.2f, 0.3f, 0.7f, 0.75f, 1.0f/3.0f, 1.0f/7.0f, 1.0f/17.0f, (float)M_PI}) { // tests
 		val=a;
-		printf("\ntest:%f\n", val);
+		printf("test:%f\n", val);
 
 		bim=to_frac_bitmanip(val);
 		dec=to_frac_base(val, 10);
@@ -82,7 +82,7 @@ int main(/*int argc, char** argv*/) {
 
 		printf("-degree:%s (%f) | ", deg.make_cstring(&strbuf0), deg.to_float());
 		deg=deg.simplify();
-		printf("%s (%f)\n", deg.make_cstring(&strbuf0), deg.to_float());
+		printf("%s (%f)\n\n", deg.make_cstring(&strbuf0), deg.to_float());
 
 		/*
 		for(int i=0;i<vals;i++) {
