@@ -27,6 +27,10 @@ int main(/*int argc, char** argv*/) {
 	frac dec, sex, bim, sub, sev, doz, deg, idk; // *chef's kiss* best variable names
 	char *strbuf0=nullptr;
 
+        // print license
+	printf("  Copyright (c) 2023, Sebastian (https://github.com/ProtoSebastian)\n");
+
+
 	/*uint16_t vals=argc-1;
 	uint16_t *bases=(uint16_t*)malloc(vals<<1);
 	uint32_t *sco=(uint32_t*)malloc(vals<<2);
