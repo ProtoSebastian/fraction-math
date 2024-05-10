@@ -9,7 +9,6 @@
 #include <cinttypes>
 #include <cmath>
 #include <cstring>
-using namespace std;
 
 int main(int argc, char** argv) {
 	char *strbuf0=nullptr, *strbuf1=nullptr; // my employment chances dropping to zero:
@@ -17,7 +16,6 @@ int main(int argc, char** argv) {
 	// print license
 	printf("  Copyright (c) 2023, Sebastian (https://github.com/ProtoSebastian)\n\n");
 
-	printf("argc: %d\n", argc);
 	frac a(1,3), b(1,5), na(-1,3), nb(-1,5), c, d(60, 120);
 	printf("a=%s (+%f)\nb=%s (+%f)\n", a.make_cstring(&strbuf0), a.to_double(), b.make_cstring(&strbuf1), b.to_double());
 	c=a*b;
@@ -42,7 +40,7 @@ int main(int argc, char** argv) {
 	printf("a-b=%s (%+f)\n", c.make_cstring(&strbuf0), c.to_double());
 	c=b-a;
 	printf("b-a=%s (%+f)\n\n\n", c.make_cstring(&strbuf0), c.to_double());
-	printf("na=%s (+%f)\nnb=%s (+%f)\n", na.make_cstring(&strbuf0), na.to_double(), nb.make_cstring(&strbuf1), nb.to_double());
+	printf("na=%s (%+f)\nnb=%s (%+f)\n", na.make_cstring(&strbuf0), na.to_double(), nb.make_cstring(&strbuf1), nb.to_double());
 	c=na*nb;
 	printf("na*nb=%s (%+f)\n", c.make_cstring(&strbuf0), c.to_double());
 	c=na/nb;
@@ -68,7 +66,7 @@ int main(int argc, char** argv) {
 	printf("d=%s (%+f)\n", d.make_cstring(&strbuf0), d.to_double());
 	d=d.simplify();
 	printf("d (simplified)=%s (%+f)\n", d.make_cstring(&strbuf0), d.to_double());
-	printf("GCD(+60, +120): +%" PRIu64 "\n", gcd(60, 120));
+	printf("GCD(+60, +120): +%" PRIu64 "\n", std::gcd<uint64_t>(60, 120));
 	/*uint64_t *primes1=prime_factors(60), *primes2=prime_factors(120), *commprimes;
 	if(primes1[0]>1ULL) {
 		printf("prime factors of 60 = {");

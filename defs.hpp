@@ -7,6 +7,7 @@
 #include <cstdio>
 #include <cmath>
 #include <cstdint>
+#include <numeric>
 #include <stdexcept>
 #include <cfloat>
 #include <string>
@@ -88,6 +89,9 @@ uint64_t* common_elements(uint64_t* a, uint64_t* b) {
 
 	return tmp;
 }*/
+
+/*
+// swapped for <numeric> std::gcd
 uint64_t gcd(uint64_t a, uint64_t b) {
 	uint64_t tmp0;
 	while(b!=0) {
@@ -96,7 +100,7 @@ uint64_t gcd(uint64_t a, uint64_t b) {
 		a=tmp0;
 	}
 	return a;
-}
+}*/
 struct frac {
 	uint64_t num, den;
 	bool sgn;
@@ -159,13 +163,13 @@ struct frac {
 	}*/
 	frac simplify() {
 		frac ftmp=this->copy();
-		uint64_t gcd0=gcd(this->num, this->den);
+		uint64_t gcd0=std::gcd<uint64_t>(this->num, this->den);
 		ftmp.num=this->num/gcd0;
 		ftmp.den=this->den/gcd0;
 		return ftmp;
 	}
 	frac simplify_self() {
-		uint64_t gcd0=gcd(this->num, this->den);
+		uint64_t gcd0=std::gcd<uint64_t>(this->num, this->den);
 		this->num/=gcd0;
 		this->den/=gcd0;
 		return *this;
